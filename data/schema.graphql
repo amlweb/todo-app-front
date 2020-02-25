@@ -1,5 +1,8 @@
 type Mutation {
   createTask(title: String, content: String): Task
+  delateTask(_id: ID): Task
+  updateTask(_id: ID, title: String, content: String): Task
+  makeDone(_id: ID): Task
 }
 
 type Task {

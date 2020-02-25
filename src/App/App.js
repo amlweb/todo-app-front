@@ -2,6 +2,8 @@ import React from 'react';
 import { graphql, QueryRenderer } from 'react-relay';
 import environment from './../enviroment';
 
+import MainPage from './pages/MainPage';
+
 export default class App extends React.Component {
   render() {
     return (
@@ -24,7 +26,8 @@ export default class App extends React.Component {
           if (!props) {
             return <div>Loading...</div>;
           }
-          return <div>Hello world</div>;
+          console.log(props);
+          return <MainPage {...props} />;
         }}
       />
     );

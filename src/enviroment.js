@@ -11,6 +11,8 @@ function fetchQuery(operation, variables) {
       variables
     })
   }).then(response => {
+    console.log('FETCH enviroment');
+    console.log(response);
     return response.json();
   });
 }
