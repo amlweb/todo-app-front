@@ -1,22 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import createTaskMutation from '../mutations/createTask';
-// import deleteTaskMutation from '../mutations/deleteTask';
+// import delateTaskMutation from '../mutations/delateTask';
 
 
-const MainPage = ({ data }) => {
-  console.log(data);
+const MainPage = ({ tasks }) => {
+  console.log(tasks);
+  const [title, setTitle] = useState();
+  const [content, setContent] = useState();
+
   return (
     <div>
       <div>TO jest ten swiat</div>
 
       <ul className="list">
-      
+        {tasks.map(task => (
+            <li key={task.id}>
+              <h4>{task.title}</h4>
+              <p>{task.content}</p>
+              {/* <button onClick={() => delateTaskMutation(task.id) }>delate</button> */}
+            </li>
+        ))}
         <li>
-          <div className="form__field">
-            <input type="text" name="title"/>
-              <textarea name="content" />
-          </div>
-          <button className="button" onClick={() => createTaskMutation()}>add</button>
+          <input value={title} type="text" name="title" onChange={e => setTitle(e.target.value)} />
+          <textarea name="content" onChange={e => setContent(e.target.value)}>{content}</textarea>
+          <button className="button" onClick={() => createTaskMutation(title, content)}>add</button>
         </li>
       </ul>
     </div>
