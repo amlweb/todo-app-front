@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash b0b5e4ff468aedec9412db4c54b65908
+ * @relayHash 2ab536dfbd67d13049e8e979dff60891
  */
 
 /* eslint-disable */
@@ -15,6 +15,7 @@ export type AppQueryResponse = {|
     +_id: ?string,
     +title: ?string,
     +content: ?string,
+    +done: ?boolean,
   |}>
 |};
 export type AppQuery = {|
@@ -30,6 +31,7 @@ query AppQuery {
     _id
     title
     content
+    done
   }
 }
 */
@@ -65,6 +67,13 @@ var v0 = [
         "name": "content",
         "args": null,
         "storageKey": null
+      },
+      {
+        "kind": "ScalarField",
+        "alias": null,
+        "name": "done",
+        "args": null,
+        "storageKey": null
       }
     ]
   }
@@ -89,12 +98,12 @@ return {
     "operationKind": "query",
     "name": "AppQuery",
     "id": null,
-    "text": "query AppQuery {\n  tasks {\n    _id\n    title\n    content\n  }\n}\n",
+    "text": "query AppQuery {\n  tasks {\n    _id\n    title\n    content\n    done\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'e3552afbf24a42db281b24ed5f1343a8';
+(node/*: any*/).hash = '81c1cb71f3bf1f7532546f1dcd7b171d';
 
 module.exports = node;

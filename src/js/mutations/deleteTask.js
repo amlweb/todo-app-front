@@ -2,8 +2,8 @@ import { commitMutation, graphql } from 'react-relay';
 import environment from '../../enviroment';
 
 const mutation = graphql`
-  mutation delateTaskMutation($id: ID) {
-    delateTask(id: $id) {
+  mutation deleteTaskMutation($_id: ID) {
+    deleteTask(_id: $_id) {
       _id
       title
       content
@@ -11,7 +11,7 @@ const mutation = graphql`
   }
 `;
 
-function delateTaskMutation(id) {
+function deleteTaskMutation(id) {
   const variables = {
     id
   };
@@ -26,4 +26,4 @@ function delateTaskMutation(id) {
   });
 }
 
-export default delateTaskMutation;
+export default deleteTaskMutation;

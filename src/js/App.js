@@ -15,6 +15,7 @@ export default class App extends React.Component {
               _id
               title
               content
+              done
             }
           }
         `}
@@ -26,7 +27,6 @@ export default class App extends React.Component {
           if (!props) {
             return <div>Loading...</div>;
           }
-          console.log(props);
           return <MainPage {...props} />;
         }}
       />
